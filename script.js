@@ -9,7 +9,7 @@ const nearNumber = document.getElementById('nearNumber');
 const last = document.getElementById('lastNumber');
 
 
-let countRandom = 0, prize1, prize2 = [], nearbyNumbers = [], lastNumber;
+let prize1, prize2 = [], nearbyNumbers = [], lastNumber;
 
 if (btnRandomPrize) {
     btnRandomPrize.addEventListener('click', () => {
@@ -23,6 +23,13 @@ if (btnCheckPrize) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('lotteryPrizeData')) {
+        const prizeData = JSON.parse(localStorage.getItem('lotteryPrizeData'));
+        displayPrizes(prizeData);
+    }
+});
+
 function RandomPrize() {
     const randomPrize =  () => Math.floor(Math.random() * 900) + 100;
 
@@ -31,13 +38,17 @@ function RandomPrize() {
     nearbyNumbers = [prize1 - 1, prize1 + 1];
     lastNumber = Math.floor(Math.random() * 90) + 10;
 
-    if (prizeOne) prizeOne.textContent = prize1;
-    if (prizeTwo) prizeTwo.textContent = prize2.join(", ");
-    if (nearNumber) nearNumber.textContent = nearbyNumbers.join(", ");
-    if (last) last.textContent = lastNumber;
+    const prizeData = { prize1, prize2, nearbyNumbers, lastNumber };
+    displayPrizes(prizeData);
 
-    countRandom++
+    localStorage.setItem('lotteryPrizeData', JSON.stringify(prizeData));
+}
 
+function displayPrizes(prizeData) {
+    if (prizeOne) prizeOne.textContent = prizeData.prize1;
+    if (prizeTwo) prizeTwo.textContent = prizeData.prize2.join(", ");
+    if (nearNumber) nearNumber.textContent = prizeData.nearbyNumbers.join(", ");
+    if (last) last.textContent = prizeData.lastNumber;
 }
 
 function checkPrize() {
