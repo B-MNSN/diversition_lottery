@@ -70,7 +70,7 @@ function checkPrize() {
 
         const numTwoDogit = lottery.toString().slice(-2).padStart(2, '0');
 
-        if (parseInt(numTwoDogit) === parseInt(lastNumber)) results.push('ถูกรางวัลเลขท้าย 2');
+        if (parseInt(numTwoDogit) === parseInt(lastNumber)) results.push('ถูกรางวัลเลขท้าย 2 ตัว');
 
         if (results.length > 0) {
             resultMessage.textContent = `${lottery} ${results.join(' และ ')} 🎉`;
