@@ -26,6 +26,12 @@ if (btnCheckPrize) {
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('lotteryPrizeData')) {
         const prizeData = JSON.parse(localStorage.getItem('lotteryPrizeData'));
+
+        prize1 = prizeData.prize1;
+        prize2 = prizeData.prize2;
+        nearbyNumbers = prizeData.nearbyNumbers;
+        lastNumber = prizeData.lastNumber;
+
         displayPrizes(prizeData);
     }
 });
