@@ -15,7 +15,7 @@
             <button class="btn btn-random-prize" id="btn-random-prize">🎲 สุ่มรางวัล</button>
         </div>
         <div class="prize-display">
-            <h2>ผลรางวัล</h2>
+            <span class="title-results">ผลรางวัล</span>
             <div class="prizes">
                 <div class="prize-item">
                     <strong>รางวัลที่ 1:</strong>
@@ -27,19 +27,21 @@
                 </div>
                 <div class="prize-item">
                     <strong>เลขข้างเคียง:</strong>
-                    <span id="near">---</span>
+                    <span id="nearNumber">---</span>
                 </div>
                 <div class="prize-item">
                     <strong>เลขท้าย 2 ตัว:</strong>
-                    <span id="last2">---</span>
+                    <span id="lastNumber">---</span>
                 </div>
             </div>
         </div>
         <div class="check-section">
-            <label for="userNumber" class="form-label">ตรวจรางวัล</label>
-            <input type="text" id="userNumber" placeholder="กรอกหมายเลขล็อตเตอรี่" class="form-control">
-            <button class="mt-3 btn btn-check-prize" id="btn-check-priz">🔍 ตรวจรางวัล</button>
-            <span id="resultMessage"></span>
+            <label for="lottery-number" class="form-label">ตรวจรางวัล</label>
+            <input type="text" id="lottery-number" placeholder="กรอกหมายเลขล็อตเตอรี่" class="form-control">
+            <button class="mt-3 btn btn-check-prize" id="btn-check-prize">🔍 ตรวจรางวัล</button>
+            <div class="my-3">
+                <span id="resultMessage"></span>
+            </div>
         </div>
     </div>
 

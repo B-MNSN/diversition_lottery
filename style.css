@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,18 +7,19 @@
 
 body {
     background-color: #fafafa;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Kanit', sans-serif !important;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background: linear-gradient(165deg, rgba(2, 0, 36, 1) 10%, rgba(255, 79, 129, 1) 100%);
 }
 
 .container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 20px;
+    background-color: #ffffffa1;
+    padding: 1.75rem;
+    border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     max-width: 450px;
     text-align: center;
@@ -24,8 +27,9 @@ body {
 
 .title-lottery {
     color: #ff4f81;
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 1.85rem;
+    margin: 0 0 1.25rem 0;
+    text-shadow: 0px 0px 1px #333;
 }
 
 .btn-check-prize,
@@ -49,6 +53,12 @@ body {
 
 .prize-display {
     margin: 30px 0;
+}
+
+.prize-display .title-results,
+.check-section label {
+    font-size: 1.75rem;
+    font-weight: 500;
 }
 
 .prizes {
@@ -93,12 +103,10 @@ body {
     box-shadow: 0 0 0 .25rem #fa93b060;
     border-color: #fa8fad;
 }
-.check-section label {
-    font-size: 1.75rem;
-    font-weight: 500;
-}
+ 
 #resultMessage {
     margin-top: 2rem;
-    font-size: 1.2em;
-    color: #ff6f61;
+    font-size: 1.5rem;
+    color: #4d68ff;
+    font-weight: 500;
 }
